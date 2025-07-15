@@ -1,25 +1,26 @@
-const AgendaModel = require('../models/Agenda');
+const GuestModel = require('../models/Guest');
 
 const AgendaService = {
     createAgenda: async (data) => {
-        return await AgendaModel.create(data);
+        console.log('la data',data);
+        return await GuestModel.create(data);
     },
     getAgendaById: async (id) => {
-        const agenda = await AgendaModel.findById(id);
+        const agenda = await GuestModel.findById(id);
         if (!agenda) {
             throw new Error('La agenda no existe');
         }
         return agenda;
     },
     getAllAgendas: async () => {
-        return await AgendaModel.findAll();
+        return await GuestModel.findAll();
     },
     deleteAgenda: async (id) => {
-        const agenda = await AgendaModel.findById(id);
+        const agenda = await GuestModel.findById(id);
         if (!agenda) {
             throw new Error('La agenda no existe');
         }
-        return await AgendaModel.delete(id);
+        return await GuestModel.delete(id);
     }
 };
 

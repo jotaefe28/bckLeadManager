@@ -1,15 +1,16 @@
 const AgendaService = require('../services/AgendaService');
 
 const AgendaController = {
+    
     createAgenda: async (req, res) => {
+        console.log('agenda controller');
         try {
             const data = {
                 name: req.body.name,
-                company: req.body.company,
-                email: req.body.email,
-                phone: req.body.phone,
-                service: req.body.service,
-                message: req.body.message
+                adult: req.body.adult,
+                child: req.body.child,
+                comment: req.body.comment,
+                assistant: req.body.assistant
             };
             await AgendaService.createAgenda(data);
             res.status(201).json({ message: 'Agenda creada con éxito' });
