@@ -1,0 +1,4 @@
+git remote -v
+git remote add both https://github.com/jotaefe28/bckLeadManager.git
+git remote set-url --add both https://gitlab.com/jotaefe006/leadmanageback.git
+git push both main
