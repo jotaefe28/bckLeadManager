@@ -18,7 +18,7 @@ app.use(express.json());
 app.use(cookieParser()); // Configura cookie-parser
 
 // Configuración de CORS
-const allowedOrigins = ["http://localhost:5173"]; // Lista de orígenes permitidos
+const allowedOrigins = process.env.ALLOWED_ORIGINS; // Lista de orígenes permitidos
 app.set('trust proxy', true);
 app.use(
   cors({
